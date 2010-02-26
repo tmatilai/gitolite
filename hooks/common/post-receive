@@ -1,0 +1,7 @@
+#!/bin/sh
+
+POST_RECEIVE_EMAIL='/usr/share/doc/git-core/contrib/hooks/post-receive-email'
+
+if [ -e "$POST_RECEIVE_EMAIL" -a -n "$( git config hooks.mailinglist )" ]; then
+	. "$POST_RECEIVE_EMAIL"
+fi
